@@ -2,7 +2,7 @@ const load = key => {
   try {
     const getStorage = localStorage.getItem(key);
 
-    return getStorage === null ? undefined : getStorage;
+    return getStorage ? getStorage : null;
   } catch (err) {
     console.error('Get localStorage error: ', err);
   }
