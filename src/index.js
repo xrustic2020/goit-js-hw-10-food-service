@@ -9,11 +9,13 @@ import menuTemplate from './templates/product-cards.hbs';
 
 refs.menu.insertAdjacentHTML('afterbegin', menuTemplate(dataMenu));
 
-if (load('theme')) {
-  if (load('theme') === Theme.DARK) { 
+const loadTheme = load('theme');
+
+if (loadTheme) {
+  if (loadTheme === Theme.DARK) {
     refs.themeButton.setAttribute('checked', 'true');
   }
-  refs.body.classList.add(load('theme'));
+  refs.body.classList.add(loadTheme);
 };
 
 refs.themeButton.addEventListener('change', changeTheme);
